@@ -36,11 +36,12 @@ import packaging.version as _version
 
 
 # pylint: disable=g-import-not-at-top
-with _warnings.catch_warnings():
-  # Importing via IPython raises a spurious warning, but avoids a version
-  # mismatch internally.
-  _warnings.simplefilter('ignore')
-  from IPython.utils import traitlets as _traitlets
+# with _warnings.catch_warnings():
+#   # Importing via IPython raises a spurious warning, but avoids a version
+#   # mismatch internally.
+#   _warnings.simplefilter('ignore')
+#   from IPython.utils import traitlets as _traitlets
+import traitlets
 
 # pylint: enable=g-import-not-at-top
 
@@ -317,8 +318,8 @@ def display_dataframe(df):
 
 
 class _JavascriptModuleFormatter(_IPython.core.formatters.BaseFormatter):
-  format_type = _traitlets.Unicode(_JAVASCRIPT_MODULE_MIME_TYPE)
-  print_method = _traitlets.ObjectName('_repr_javascript_module_')
+  format_type = traitlets.Unicode(_JAVASCRIPT_MODULE_MIME_TYPE)
+  print_method = traitlets.ObjectName('_repr_javascript_module_')
 
 
 def _register_jsmodule_mimetype():
