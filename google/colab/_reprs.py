@@ -13,12 +13,6 @@ import IPython
 from IPython.core import oinspect
 import numpy as np
 import PIL as pil
-# pylint: disable=g-import-not-at-top
-# with warnings.catch_warnings():
-#   # Importing via IPython raises a spurious warning, but avoids a version
-#   # mismatch internally.
-#   warnings.simplefilter('ignore')
-#   from IPython.utils import traitlets
 import traitlets
 
 
