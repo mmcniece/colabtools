@@ -13,7 +13,7 @@ import IPython
 from IPython.core import oinspect
 import numpy as np
 import PIL as pil
-import traitlets
+import traitlets as _traitlets
 
 
 _original_string_formatters = {}
@@ -31,8 +31,8 @@ _INTRINSIC_MIME_TYPE = 'application/vnd.google.colaboratory.intrinsic+json'
 
 
 class _IntrinsicTypeFormatter(IPython.core.formatters.BaseFormatter):
-  format_type = traitlets.Unicode(_INTRINSIC_MIME_TYPE)
-  print_method = traitlets.ObjectName('_repr_intrinsic_type_')
+  format_type = _traitlets.Unicode(_INTRINSIC_MIME_TYPE)
+  print_method = _traitlets.ObjectName('_repr_intrinsic_type_')
   _return_type = dict
 
 
